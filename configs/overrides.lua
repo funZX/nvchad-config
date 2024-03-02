@@ -5,12 +5,10 @@ M.treesitter = {
         "c",
         "cpp",
         "python",
-        "julia",
         "go",
         "rust",
         "robot",
         "lua",
-        "typescript",
         "html",
         "tmux",
         "vim",
@@ -26,18 +24,12 @@ M.treesitter = {
 M.mason = {
     ensure_installed = {
         "codelldb",
-
         "html-lsp",
-
         "json-lsp",
-
         "pyright",
-
         "bash-debug-adapter",
         "bash-language-server",
-
         "robotframework-lsp",
-
         "lua-language-server",
     },
 }
