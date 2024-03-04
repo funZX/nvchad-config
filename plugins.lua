@@ -2,6 +2,15 @@ local overrides = require("custom.configs.overrides")
 
 local plugins = {
 
+    {
+        "2KAbhishek/nerdy.nvim",
+
+        opts={},
+        config = function(_, opts)
+            require("telescope").load_extension("nerdy")
+        end,
+     },
+
     -- override plugin configs
     {
         "williamboman/mason.nvim",

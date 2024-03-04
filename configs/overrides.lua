@@ -26,9 +26,9 @@ M.mason = {
         "html-lsp",
         "json-lsp",
         "pyright",
+        "lua-language-server",
         "bash-debug-adapter",
         "bash-language-server",
-        "lua-language-server",
     },
 }
 
