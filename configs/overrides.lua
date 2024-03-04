@@ -23,7 +23,6 @@ M.treesitter = {
 
 M.mason = {
     ensure_installed = {
-        "codelldb",
         "html-lsp",
         "json-lsp",
         "pyright",
