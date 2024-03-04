@@ -4,13 +4,54 @@ local M = {}
 M.general = {
     n = {
         [";"] = { ":", "enter command mode", opts = { nowait = true } },
+        ["<leader>q"] = {":q<cr>", "quit"}
     },
+
 
     v = {
         [">"] = { ">gv", "indent" },
     },
 }
 
+M.preview = {
+    n = {
+        ["gr"] = {
+            function()
+                require("goto-preview").goto_preview_references()
+            end,
+            "LSP Preview References",
+        },
+
+        ["gd"] = {
+            function()
+                require("goto-preview").goto_preview_definition()
+            end,
+            "LSP Preview Definition",
+        },
+
+        ["gD"] = {
+            function()
+                require("goto-preview").goto_preview_declaration()
+            end,
+            "LSP Preview Declaration",
+        },
+
+        ["gi"] = {
+            function()
+                require("goto-preview").goto_preview_implementation()
+            end,
+            "LSP Preview Implementation",
+        },
+
+        ["gt"] = {
+            function()
+                require("goto-preview").goto_preview_type_definition()
+            end,
+            "LSP Go To Type Definition",
+        },
+
+    }
+}
 
 M.dap = {
     n = {
@@ -140,13 +181,6 @@ M.trouble = {
                 require("trouble").toggle("loclist")
             end,
             "Trouble Loc List",
-        },
-
-        ["gR"] = {
-            function()
-                require("trouble").toggle("lsp_references")
-            end,
-            "Trouble LSP References",
         },
     },
 }

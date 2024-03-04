@@ -2,21 +2,21 @@ local overrides = require("custom.configs.overrides")
 
 local plugins = {
 
-  -- override plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason
-  },
+    -- override plugin configs
+    {
+        "williamboman/mason.nvim",
+        opts = overrides.mason
+    },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = overrides.treesitter,
+    },
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
+    {
+        "nvim-tree/nvim-tree.lua",
+        opts = overrides.nvimtree,
+    },
 
 
     {
@@ -80,6 +80,22 @@ local plugins = {
     },
 
 
+    {
+        "rmagatti/goto-preview",
+
+        init = function()
+            require("core.utils").load_mappings "preview"
+        end,
+
+        opts = {
+            width = 180,
+            height = 30,
+        },
+        config = function(_, opts)
+            require("goto-preview").setup(opts)
+        end,
+    },
+
     "folke/neoconf.nvim",
     {
         "neovim/nvim-lspconfig",
@@ -100,6 +116,15 @@ local plugins = {
         end,
     },
 
+
+    "MunifTanjim/nui.nvim",
+    {
+        "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("chatgpt").setup()
+        end,
+    }
 }
 
 return plugins

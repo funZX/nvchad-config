@@ -29,7 +29,6 @@ M.mason = {
         "pyright",
         "bash-debug-adapter",
         "bash-language-server",
-        "robotframework-lsp",
         "lua-language-server",
     },
 }
