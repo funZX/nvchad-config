@@ -12,6 +12,8 @@ M.ui = {
 M.ui.extended_integrations = { "dap", "trouble" }
 
 M.plugins = "custom.plugins"
+
 M.mappings = require "custom.mappings"
 
 return M
+

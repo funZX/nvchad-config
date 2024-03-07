@@ -9,6 +9,7 @@ M.treesitter = {
         "rust",
         "robot",
         "lua",
+        "squirrel",
         "html",
         "tmux",
         "vim",

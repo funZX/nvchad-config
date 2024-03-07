@@ -5,11 +5,12 @@ local plugins = {
     {
         "2KAbhishek/nerdy.nvim",
 
-        opts={},
+        opts = {},
         config = function(_, opts)
             require("telescope").load_extension("nerdy")
         end,
-     },
+    },
+
 
     -- override plugin configs
     {

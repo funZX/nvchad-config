@@ -4,7 +4,7 @@ local M = {}
 M.general = {
     n = {
         [";"] = { ":", "enter command mode", opts = { nowait = true } },
-        ["<leader>q"] = {":q<cr>", "quit"}
+        ["<leader>q"] = { ":q<cr>", "quit" }
     },
 
 
@@ -12,6 +12,7 @@ M.general = {
         [">"] = { ">gv", "indent" },
     },
 }
+
 
 M.preview = {
     n = {
