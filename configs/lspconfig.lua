@@ -55,3 +55,6 @@ vim.fn.sign_define('DapBreakpointRejected',{ text = '', texthl = 'orange', li
 vim.fn.sign_define('DapStopped', { text = '', texthl = 'green', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
 vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'yellow', linehl = 'DapBreakpoint', numhl = 'DapBreakpoint' })
 
+vim.diagnostic.config {
+    virtual_text = { prefix = "󰧞 "},
+}

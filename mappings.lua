@@ -1,56 +1,74 @@
 ---@type MappingsTable
 local M = {}
 
+M.disabled = {
+    n = {
+        ["<leader>fm"] = "",
+        ["C-n"] = "",
+    },
+}
+
 M.general = {
     n = {
-        [";"] = { ":", "enter command mode", opts = { nowait = true } },
-        ["<leader>q"] = { ":q<cr>", "quit" }
+        ["<leader>q"] = { ":q<cr>", "quit" },
+        ["<leader>e"] = { "<cmd> NvimTreeToggle <cr>", "Toggle nvimtree" },
     },
 
 
     v = {
-        [">"] = { ">gv", "indent" },
+        [">"] = { ">gv", "Indent" },
     },
 }
 
 
-M.preview = {
+M.lsp = {
     n = {
-        ["gr"] = {
-            function()
-                require("goto-preview").goto_preview_references()
-            end,
-            "LSP Preview References",
+        ["<leader>gr"] = {
+            ":Lspsaga finder <cr>", "LSP References", opts = { silent = true }
+        },
+        ["<leader>ga"] = {
+            ":Lspsaga code_action <cr>", "LSP Code Actions", opts = { silent = true }
+        },
+        ["K"] = {
+            ":Lspsaga hover_doc <cr>", "LSP Hover", opts = { silent = true }
+        },
+        ["<leader>gd"] = {
+            ":Lspsaga goto_definition <cr>", "LSP GoTo definition", opts = { silent = true }
+        },
+        ["<leader>gD"] = {
+            ":Lspsaga peek_definition <cr>", "LSP Peek Definition", opts = { silent = true }
+        },
+        ["<leader>gt"] = {
+            ":Lspsaga goto_type_definition <cr>", "LSP GoTo Type Definition", opts = { silent = true }
+        },
+        ["<leader>gT"] = {
+            ":Lspsaga peek_type_definition <cr>", "LSP Peek Type Definition", opts = { silent = true }
+        },
+        ["<leader>g?"] = {
+            ":Lspsaga show_line_diagnostics <cr>", "LSP Line Diagnostic", opts = { silent = true }
+        },
+        ["<leader>gg"] = {
+            ":Lspsaga show_buf_diagnostics <cr>", "LSP Buffer Diagnostic", opts = { silent = true }
+        },
+        ["<leader>gG"] = {
+            ":Lspsaga show_workspace_diagnostics <cr>", "LSP Diagnostics", opts = { silent = true }
+        },
+        ["<leader>gR"] = {
+            ":Lspsaga rename <cr>", "LSP Rename", opts = { silent = true }
+        },
+        ["<leader>g["] = {
+            ":Lspsaga diagnostic_jump_prev <cr>", "LSP Prev Diagnostic", opts = { silent = true }
+        },
+        ["<leader>g]"] = {
+            ":Lspsaga diagnostic_jump_next <cr>", "LSP Next Diagnostic", opts = { silent = true }
         },
 
-        ["gd"] = {
+        ["<leader>gf"] = {
             function()
-                require("goto-preview").goto_preview_definition()
+                vim.lsp.buf.format { async = true }
             end,
-            "LSP Preview Definition",
-        },
-
-        ["gD"] = {
-            function()
-                require("goto-preview").goto_preview_declaration()
-            end,
-            "LSP Preview Declaration",
-        },
-
-        ["gi"] = {
-            function()
-                require("goto-preview").goto_preview_implementation()
-            end,
-            "LSP Preview Implementation",
-        },
-
-        ["gt"] = {
-            function()
-                require("goto-preview").goto_preview_type_definition()
-            end,
-            "LSP Go To Type Definition",
-        },
-
+            "LSP Format"
+        }
     }
 }
 
@@ -142,46 +160,6 @@ M.dap_python = {
                 require("dap-python").test_method()
             end,
             "Python Test Method",
-        },
-    },
-}
-
-
-M.trouble = {
-    n = {
-        ["<leader>tt"] = {
-            function()
-                require("trouble").toggle()
-            end,
-            "Toggle Trouble",
-        },
-
-        ["<leader>tw"] = {
-            function()
-                require("trouble").toggle("workspace_diagnostics")
-            end,
-            "Toggle Trouble Workspace",
-        },
-
-        ["<leader>td"] = {
-            function()
-                require("trouble").toggle("document_diagnostics")
-            end,
-            "Toggle Trouble Document",
-        },
-
-        ["<leader>tq"] = {
-            function()
-                require("trouble").toggle("quickfix")
-            end,
-            "Trouble Quick Fix",
-        },
-
-        ["<leader>tl"] = {
-            function()
-                require("trouble").toggle("loclist")
-            end,
-            "Trouble Loc List",
         },
     },
 }

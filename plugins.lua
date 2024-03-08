@@ -82,27 +82,18 @@ local plugins = {
 
 
     {
-        "folke/trouble.nvim",
+        "nvimdev/lspsaga.nvim",
+        event = "LspAttach",
 
         init = function()
-            require("core.utils").load_mappings "trouble"
-        end,
-    },
-
-
-    {
-        "rmagatti/goto-preview",
-
-        init = function()
-            require("core.utils").load_mappings "preview"
+            require("core.utils").load_mappings "lsp"
         end,
 
         opts = {
-            width = 180,
-            height = 30,
+            symbol_in_winbar = { enable = false }
         },
         config = function(_, opts)
-            require("goto-preview").setup(opts)
+            require("lspsaga").setup(opts)
         end,
     },
 
