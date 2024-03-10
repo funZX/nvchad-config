@@ -4,6 +4,8 @@ local M = {}
 M.disabled = {
     n = {
         ["<leader>fm"] = "",
+        ["<leader>lf"] = "",
+        ["<leader>ra"] = "",
         ["C-n"] = "",
     },
 }

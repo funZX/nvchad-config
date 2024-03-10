@@ -12,6 +12,18 @@ M.override = {
     Normal = {
         bg = "NONE"
     },
+    TelescopeBorder = {
+        fg = "#7aa2f7",
+    },
+    TelescopePreviewBorder = {
+        fg = "#7aa2f7",
+    },
+    TelescopePromptBorder = {
+        fg = "#7aa2f7",
+    },
+    TelescopeResultBorder = {
+        fg = "#7aa2f7",
+    },
 }
 
 ---@type HLTable

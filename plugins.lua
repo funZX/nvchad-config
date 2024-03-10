@@ -28,6 +28,11 @@ local plugins = {
         opts = overrides.nvimtree,
     },
 
+    {
+        "NvChad/nvterm",
+        opts = overrides.nvterm,
+    },
+
 
     {
         "mfussenegger/nvim-dap-python",
@@ -45,7 +50,6 @@ local plugins = {
             require("core.utils").load_mappings "dap"
         end,
 
-        opts = {},
         config = function(_, opts)
             require("dap-python").setup("~/.local/venv/debugpy/bin/python", { test_runner = "unittest" })
             require("custom.configs.dap")
@@ -59,7 +63,6 @@ local plugins = {
             require("core.utils").load_mappings "dapui"
         end,
 
-        opts = {},
         config = function(_, opts)
             require("dapui").setup(opts)
         end,
@@ -109,7 +112,6 @@ local plugins = {
             vim.opt.softtabstop = 4
         end,
 
-        opts = {},
         config = function(_, opts)
             require "neoconf".setup()
             require "plugins.configs.lspconfig"
