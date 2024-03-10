@@ -2,16 +2,6 @@ local overrides = require("custom.configs.overrides")
 
 local plugins = {
 
-    {
-        "2KAbhishek/nerdy.nvim",
-
-        opts = {},
-        config = function(_, opts)
-            require("telescope").load_extension("nerdy")
-        end,
-    },
-
-
     -- override plugin configs
     {
         "williamboman/mason.nvim",
@@ -118,16 +108,6 @@ local plugins = {
             require "custom.configs.lspconfig"
         end,
     },
-
-
-    "MunifTanjim/nui.nvim",
-    {
-        "jackMort/ChatGPT.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("chatgpt").setup()
-        end,
-    }
 }
 
 return plugins
